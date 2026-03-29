@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Spread Shock Detector | BondStats</title>
+
+<style>
+:root{
+  --bg:#06111d;
+  --panel:#0f1f34;
+  --text:#eef4fb;
+  --muted:#9bb0c8;
+  --accent:#89b8ff;
+  --green:#7fd39a;
+  --yellow:#ffd27d;
+  --red:#ff8a8a;
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial;
+  background:linear-gradient(180deg,#06111d,#0b1626);
+  color:var(--text);
+}
+
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:30px 16px;
+}
+
+.panel{
+  background:var(--panel);
+  padding:20px;
+  border-radius:18px;
+  margin-bottom:16px;
+}
+
+h1{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.sub{
+  color:var(--muted);
+}
+
+.score{
+  font-size:60px;
+  font-weight:800;
+}
+
+.level{
+  font-size:18px;
+  font-weight:700;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.positive{color:var(--yellow)}
+.negative{color:var(--green)}
+
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="panel">
+<h1>Spread Shock Detector</h1>
+<p class="sub">
+Real-time system detecting divergence across global sovereign bond markets.
+</p>
+<p id="updated">Loading...</p>
+</div>
+
+<div class="panel">
+<div class="score" id="shock-score">—</div>
+<div class="level" id="shock-level">Loading...</div>
+<p class="sub" id="shock-desc"></p>
+</div>
+
+<div class="panel">
+<h2>Largest Spread Moves</h2>
+<div id="moves"></div>
+</div>
+
+</div>
+
+<script>
+
+function fmt(v){
+  if(!isFinite(v)) return "—";
+  return (v>0?"+":"")+v.toFixed(2)+" pp";
+}
+
+function level(score){
+  if(score<25) return ["Normal","#7fd39a"];
+  if(score<50) return ["Elevated","#ffd27d"];
+  if(score<75) return ["Stress","#ffb36b"];
+  return ["Shock","#ff8a8a"];
+}
+
+fetch("https://botapi33.github.io/bondstats-global-yields/global_yields.json?ts="+Date.now())
+.then(r=>r.json())
+.then(data=>{
+
+  document.getElementById("updated").textContent =
+    "Updated: "+(data.meta?.lastUpdated || "—");
+
+  const rows = Object.values(data.countries)
+    .map(x=>({
+      label:x.label,
+      value:Number(x.value),
+      change:Number(x.change)
+    }))
+    .filter(x=>isFinite(x.value));
+
+  const us = rows.find(r=>r.label==="United States");
+  if(!us) return;
+
+  const spreads = rows
+    .filter(r=>r.label!=="United States")
+    .map(r=>({
+      label:r.label,
+      spread:r.value - us.value,
+      change:r.change
+    }));
+
+  const spreadStd = Math.sqrt(
+    spreads.reduce((sum,x)=>sum+Math.pow(x.spread,2),0)/spreads.length
+  );
+
+  const changeAvg = spreads
+    .map(x=>Math.abs(x.change||0))
+    .reduce((a,b)=>a+b,0)/spreads.length;
+
+  const score = Math.min(100,
+    spreadStd*10 + changeAvg*20
+  );
+
+  const lvl = level(score);
+
+  document.getElementById("shock-score").textContent =
+    score.toFixed(0);
+
+  const levelEl = document.getElementById("shock-level");
+  levelEl.textContent = lvl[0];
+  levelEl.style.color = lvl[1];
+
+  document.getElementById("shock-desc").textContent =
+    "Measures dispersion and rate of change across global bond yields.";
+
+  const movers = spreads
+    .sort((a,b)=>Math.abs(b.change)-Math.abs(a.change))
+    .slice(0,8);
+
+  document.getElementById("moves").innerHTML =
+    movers.map(m=>`
+      <div class="row">
+        <div>${m.label}</div>
+        <div class="${m.change>0?"positive":"negative"}">${fmt(m.change)}</div>
+      </div>
+    `).join("");
+
+});
+
+</script>
+
+</body>
+</html>
