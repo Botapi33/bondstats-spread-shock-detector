@@ -292,8 +292,17 @@ Promise.all([
   meta.textContent =
     `Updated: ${alertsData.updated_at || "—"} • Source feed: ${alertsData.source_updated_at || "—"}`;
 
-  document.getElementById("shock-score").textContent =
-    alertsData.shock_score !== undefined ? Math.round(alertsData.shock_score) : "—";
+  const shockScoreEl = document.getElementById("shock-score");
+const rawShockScore = alertsData.shock_score;
+
+const safeShockScore =
+  rawShockScore !== null &&
+  rawShockScore !== undefined &&
+  !Number.isNaN(Number(rawShockScore))
+    ? Math.round(Number(rawShockScore))
+    : "—";
+
+shockScoreEl.textContent = safeShockScore;
 
   const levelEl = document.getElementById("shock-level");
   levelEl.textContent = alertsData.level ? alertsData.level.toUpperCase() : "—";
