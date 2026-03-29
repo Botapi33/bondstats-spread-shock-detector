@@ -3,176 +3,362 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Spread Shock Detector | BondStats</title>
-
+<meta name="description" content="Real-time divergence and spread shock alert system for global bond markets.">
 <style>
 :root{
   --bg:#06111d;
+  --bg2:#0b1626;
   --panel:#0f1f34;
+  --panel2:#132840;
   --text:#eef4fb;
   --muted:#9bb0c8;
   --accent:#89b8ff;
   --green:#7fd39a;
   --yellow:#ffd27d;
+  --orange:#ffb36b;
   --red:#ff8a8a;
+  --border:rgba(255,255,255,0.08);
+  --radius:18px;
+  --shadow:0 16px 40px rgba(0,0,0,0.35);
 }
+
+*{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:Inter,Arial;
-  background:linear-gradient(180deg,#06111d,#0b1626);
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(90,130,190,0.18), transparent 24%),
+    linear-gradient(180deg,var(--bg),var(--bg2));
   color:var(--text);
+  line-height:1.55;
 }
 
 .wrap{
-  max-width:1100px;
+  max-width:1180px;
   margin:auto;
-  padding:30px 16px;
+  padding:28px 16px 40px;
 }
 
 .panel{
   background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
   padding:20px;
-  border-radius:18px;
   margin-bottom:16px;
 }
 
+.hero{
+  padding:24px;
+}
+
+.eyebrow{
+  margin:0 0 8px;
+  color:var(--accent);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:800;
+}
+
 h1{
-  font-size:40px;
-  margin-bottom:10px;
+  margin:0 0 10px;
+  font-size:42px;
+  line-height:1.05;
+  letter-spacing:-0.03em;
+}
+
+h2{
+  margin:0 0 10px;
+  font-size:24px;
+  letter-spacing:-0.02em;
 }
 
 .sub{
   color:var(--muted);
+  margin:0;
 }
 
-.score{
-  font-size:60px;
+.meta{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.grid-4{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+  margin-bottom:16px;
+}
+
+.stat{
+  background:var(--panel2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+}
+
+.label{
+  display:block;
+  margin-bottom:8px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:12px;
   font-weight:800;
 }
 
-.level{
-  font-size:18px;
-  font-weight:700;
+.value{
+  font-size:34px;
+  font-weight:800;
+  line-height:1.05;
+  margin-bottom:6px;
+}
+
+.note{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:16px;
+  margin-bottom:16px;
+}
+
+.level-normal{color:var(--green)}
+.level-elevated{color:var(--yellow)}
+.level-stress{color:var(--orange)}
+.level-shock{color:var(--red)}
+
+.alert-list,
+.move-list,
+.history-list{
+  display:grid;
+  gap:10px;
 }
 
 .row{
-  display:flex;
-  justify-content:space-between;
-  padding:10px 0;
-  border-bottom:1px solid rgba(255,255,255,0.05);
+  display:grid;
+  grid-template-columns:1.3fr .9fr .9fr;
+  gap:10px;
+  align-items:center;
+  padding:12px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  font-size:14px;
 }
 
-.positive{color:var(--yellow)}
-.negative{color:var(--green)}
+.row-4{
+  grid-template-columns:1.3fr .8fr .8fr .8fr;
+}
 
+.badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:28px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.badge-normal{background:rgba(127,211,154,0.15); color:var(--green)}
+.badge-elevated{background:rgba(255,210,125,0.15); color:var(--yellow)}
+.badge-stress{background:rgba(255,179,107,0.15); color:var(--orange)}
+.badge-shock{background:rgba(255,138,138,0.15); color:var(--red)}
+
+.positive{color:var(--yellow); font-weight:700}
+.negative{color:var(--green); font-weight:700}
+
+.empty{color:var(--muted)}
+
+@media (max-width: 980px){
+  .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-2{grid-template-columns:1fr}
+}
+
+@media (max-width: 680px){
+  h1{font-size:31px}
+  .grid-4{grid-template-columns:1fr}
+  .row,.row-4{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-
 <div class="wrap">
 
-<div class="panel">
-<h1>Spread Shock Detector</h1>
-<p class="sub">
-Real-time system detecting divergence across global sovereign bond markets.
-</p>
-<p id="updated">Loading...</p>
-</div>
+  <div class="panel hero">
+    <p class="eyebrow">BondStats Alert Engine</p>
+    <h1>Spread Shock Detector</h1>
+    <p class="sub">
+      A real-time divergence alert system for global sovereign bond markets.
+      Tracks spread dispersion, yield shock intensity, and the countries driving cross-market stress.
+    </p>
+    <div class="meta" id="meta">Loading latest alert state...</div>
+  </div>
 
-<div class="panel">
-<div class="score" id="shock-score">—</div>
-<div class="level" id="shock-level">Loading...</div>
-<p class="sub" id="shock-desc"></p>
-</div>
+  <div class="grid-4">
+    <div class="stat">
+      <span class="label">Shock Score</span>
+      <div class="value" id="shock-score">—</div>
+      <div class="note" id="shock-note">Loading...</div>
+    </div>
+    <div class="stat">
+      <span class="label">Regime</span>
+      <div class="value" id="shock-level">—</div>
+      <div class="note" id="shock-desc">Loading...</div>
+    </div>
+    <div class="stat">
+      <span class="label">Largest Mover</span>
+      <div class="value" id="largest-mover">—</div>
+      <div class="note" id="largest-mover-note">Loading...</div>
+    </div>
+    <div class="stat">
+      <span class="label">Active Alerts</span>
+      <div class="value" id="alert-count">—</div>
+      <div class="note" id="alert-count-note">Loading...</div>
+    </div>
+  </div>
 
-<div class="panel">
-<h2>Largest Spread Moves</h2>
-<div id="moves"></div>
-</div>
+  <div class="grid-2">
+    <div class="panel">
+      <h2>Active Alerts</h2>
+      <p class="sub">Current spread shock signals generated from the live BondStats feed.</p>
+      <div class="alert-list" id="alert-list">
+        <div class="empty">Loading alerts...</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Top Movers</h2>
+      <p class="sub">Countries contributing most to current cross-market spread stress.</p>
+      <div class="move-list" id="move-list">
+        <div class="empty">Loading movers...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Recent Alert History</h2>
+    <p class="sub">Latest saved alert snapshots generated by the GitHub alert engine.</p>
+    <div class="history-list" id="history-list">
+      <div class="empty">Loading history...</div>
+    </div>
+  </div>
 
 </div>
 
 <script>
-
-function fmt(v){
-  if(!isFinite(v)) return "—";
-  return (v>0?"+":"")+v.toFixed(2)+" pp";
+function fmt(v, suffix=""){
+  if(v === null || v === undefined || Number.isNaN(Number(v))) return "—";
+  const n = Number(v);
+  const sign = n > 0 ? "+" : "";
+  return sign + n.toFixed(2) + suffix;
 }
 
-function level(score){
-  if(score<25) return ["Normal","#7fd39a"];
-  if(score<50) return ["Elevated","#ffd27d"];
-  if(score<75) return ["Stress","#ffb36b"];
-  return ["Shock","#ff8a8a"];
+function levelClass(level){
+  const map = {
+    normal: "level-normal",
+    elevated: "level-elevated",
+    stress: "level-stress",
+    shock: "level-shock"
+  };
+  return map[(level || "").toLowerCase()] || "";
 }
 
-fetch("https://botapi33.github.io/bondstats-global-yields/global_yields.json?ts="+Date.now())
-.then(r=>r.json())
-.then(data=>{
+function badgeClass(level){
+  const map = {
+    normal: "badge-normal",
+    elevated: "badge-elevated",
+    stress: "badge-stress",
+    shock: "badge-shock"
+  };
+  return map[(level || "").toLowerCase()] || "badge-normal";
+}
 
-  document.getElementById("updated").textContent =
-    "Updated: "+(data.meta?.lastUpdated || "—");
-
-  const rows = Object.values(data.countries)
-    .map(x=>({
-      label:x.label,
-      value:Number(x.value),
-      change:Number(x.change)
-    }))
-    .filter(x=>isFinite(x.value));
-
-  const us = rows.find(r=>r.label==="United States");
-  if(!us) return;
-
-  const spreads = rows
-    .filter(r=>r.label!=="United States")
-    .map(r=>({
-      label:r.label,
-      spread:r.value - us.value,
-      change:r.change
-    }));
-
-  const spreadStd = Math.sqrt(
-    spreads.reduce((sum,x)=>sum+Math.pow(x.spread,2),0)/spreads.length
-  );
-
-  const changeAvg = spreads
-    .map(x=>Math.abs(x.change||0))
-    .reduce((a,b)=>a+b,0)/spreads.length;
-
-  const score = Math.min(100,
-    spreadStd*10 + changeAvg*20
-  );
-
-  const lvl = level(score);
+Promise.all([
+  fetch("./alerts.json?ts=" + Date.now()).then(r => r.json()),
+  fetch("./history.json?ts=" + Date.now()).then(r => r.json())
+]).then(([alertsData, historyData]) => {
+  const meta = document.getElementById("meta");
+  meta.textContent =
+    `Updated: ${alertsData.updated_at || "—"} • Source feed: ${alertsData.source_updated_at || "—"}`;
 
   document.getElementById("shock-score").textContent =
-    score.toFixed(0);
+    alertsData.shock_score !== undefined ? Math.round(alertsData.shock_score) : "—";
 
   const levelEl = document.getElementById("shock-level");
-  levelEl.textContent = lvl[0];
-  levelEl.style.color = lvl[1];
+  levelEl.textContent = alertsData.level ? alertsData.level.toUpperCase() : "—";
+  levelEl.className = "value " + levelClass(alertsData.level);
 
   document.getElementById("shock-desc").textContent =
-    "Measures dispersion and rate of change across global bond yields.";
+    alertsData.description || "No description available.";
 
-  const movers = spreads
-    .sort((a,b)=>Math.abs(b.change)-Math.abs(a.change))
-    .slice(0,8);
+  const topMover = (alertsData.top_movers || [])[0];
+  document.getElementById("largest-mover").textContent = topMover ? topMover.country : "—";
+  document.getElementById("largest-mover-note").textContent = topMover
+    ? `${fmt(topMover.change, " pp")} recent move • ${fmt(topMover.spread_vs_us, " pp")} spread vs US`
+    : "No active mover data.";
 
-  document.getElementById("moves").innerHTML =
-    movers.map(m=>`
-      <div class="row">
-        <div>${m.label}</div>
-        <div class="${m.change>0?"positive":"negative"}">${fmt(m.change)}</div>
+  document.getElementById("alert-count").textContent = String((alertsData.alerts || []).length);
+  document.getElementById("alert-count-note").textContent =
+    ((alertsData.alerts || []).length > 0)
+      ? "Current live alerts"
+      : "No active alerts right now";
+
+  const alertList = document.getElementById("alert-list");
+  if (!alertsData.alerts || !alertsData.alerts.length) {
+    alertList.innerHTML = `<div class="empty">No active alerts.</div>`;
+  } else {
+    alertList.innerHTML = alertsData.alerts.map(a => `
+      <div class="row row-4">
+        <div><strong>${a.title}</strong><br><span class="sub">${a.message}</span></div>
+        <div>${a.country || "Global"}</div>
+        <div>${a.value !== undefined ? fmt(a.value, a.unit || "") : "—"}</div>
+        <div><span class="badge ${badgeClass(a.level)}">${(a.level || "normal").toUpperCase()}</span></div>
       </div>
     `).join("");
+  }
 
+  const moveList = document.getElementById("move-list");
+  if (!alertsData.top_movers || !alertsData.top_movers.length) {
+    moveList.innerHTML = `<div class="empty">No mover data available.</div>`;
+  } else {
+    moveList.innerHTML = alertsData.top_movers.map(m => `
+      <div class="row">
+        <div><strong>${m.country}</strong></div>
+        <div class="${m.change >= 0 ? "positive" : "negative"}">${fmt(m.change, " pp")}</div>
+        <div>${fmt(m.spread_vs_us, " pp")}</div>
+      </div>
+    `).join("");
+  }
+
+  const historyList = document.getElementById("history-list");
+  if (!historyData.entries || !historyData.entries.length) {
+    historyList.innerHTML = `<div class="empty">No history available.</div>`;
+  } else {
+    historyList.innerHTML = historyData.entries.slice(0, 10).map(h => `
+      <div class="row">
+        <div><strong>${h.timestamp}</strong></div>
+        <div>${Math.round(h.shock_score)}/100</div>
+        <div><span class="badge ${badgeClass(h.level)}">${(h.level || "normal").toUpperCase()}</span></div>
+      </div>
+    `).join("");
+  }
+}).catch(() => {
+  document.getElementById("meta").textContent = "Unable to load alert files.";
+  document.getElementById("alert-list").innerHTML = `<div class="empty">Error loading alerts.</div>`;
+  document.getElementById("move-list").innerHTML = `<div class="empty">Error loading movers.</div>`;
+  document.getElementById("history-list").innerHTML = `<div class="empty">Error loading history.</div>`;
 });
-
 </script>
-
 </body>
 </html>
