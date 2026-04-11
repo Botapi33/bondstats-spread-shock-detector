@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-04-11T07:15:36+00:00",
-  "source_updated_at": "2026-04-10",
-  "shock_score": 18.79,
+  "updated_at": "2026-04-11T09:00:21+00:00",
+  "source_updated_at": "2026-04-11",
+  "shock_score": 16.94,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
@@ -9,11 +9,6 @@
       "country": "Mexico",
       "change": -0.47,
       "spread_vs_us": 4.45
-    },
-    {
-      "country": "South Africa",
-      "change": -0.36,
-      "spread_vs_us": 3.97
     },
     {
       "country": "Hungary",
@@ -44,6 +39,11 @@
       "country": "South Korea",
       "change": 0.13,
       "spread_vs_us": -0.68
+    },
+    {
+      "country": "Canada",
+      "change": -0.11,
+      "spread_vs_us": -1.0
     }
   ],
   "alerts": [
@@ -52,14 +52,6 @@
       "message": "Mexico is showing an unusually large recent yield move.",
       "country": "Mexico",
       "value": -0.47,
-      "unit": " pp",
-      "level": "stress"
-    },
-    {
-      "title": "Large country move",
-      "message": "South Africa is showing an unusually large recent yield move.",
-      "country": "South Africa",
-      "value": -0.36,
       "unit": " pp",
       "level": "stress"
     },
