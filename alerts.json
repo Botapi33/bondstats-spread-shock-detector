@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-04-16T14:10:17+00:00",
+  "updated_at": "2026-04-16T15:52:52+00:00",
   "source_updated_at": "2026-04-16",
-  "shock_score": 23.81,
+  "shock_score": 19.92,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
@@ -16,9 +16,9 @@
       "spread_vs_us": 2.87
     },
     {
-      "country": "Mexico",
-      "change": -0.47,
-      "spread_vs_us": 4.48
+      "country": "Poland",
+      "change": 0.59,
+      "spread_vs_us": 1.32
     },
     {
       "country": "United Kingdom",
@@ -36,14 +36,14 @@
       "spread_vs_us": -0.89
     },
     {
-      "country": "Japan",
-      "change": 0.24,
-      "spread_vs_us": -1.91
-    },
-    {
       "country": "Belgium",
       "change": 0.21,
       "spread_vs_us": -0.75
+    },
+    {
+      "country": "Spain",
+      "change": 0.2,
+      "spread_vs_us": -0.88
     }
   ],
   "alerts": [
@@ -65,11 +65,11 @@
     },
     {
       "title": "Large country move",
-      "message": "Mexico is showing an unusually large recent yield move.",
-      "country": "Mexico",
-      "value": -0.47,
+      "message": "Poland is showing an unusually large recent yield move.",
+      "country": "Poland",
+      "value": 0.59,
       "unit": " pp",
-      "level": "stress"
+      "level": "shock"
     },
     {
       "title": "Wide positive spread",
