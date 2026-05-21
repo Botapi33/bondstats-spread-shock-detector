@@ -1,49 +1,49 @@
 {
-  "updated_at": "2026-05-21T10:01:14+00:00",
-  "source_updated_at": "2026-05-20",
-  "shock_score": 19.16,
+  "updated_at": "2026-05-21T13:30:39+00:00",
+  "source_updated_at": "2026-05-21",
+  "shock_score": 19.15,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
     {
       "country": "Hungary",
       "change": -0.86,
-      "spread_vs_us": 1.66
+      "spread_vs_us": 1.6
     },
     {
       "country": "Czech Republic",
       "change": 0.35,
-      "spread_vs_us": 0.11
+      "spread_vs_us": 0.05
     },
     {
       "country": "Italy",
       "change": 0.34,
-      "spread_vs_us": -0.88
+      "spread_vs_us": -0.94
     },
     {
       "country": "Slovakia",
       "change": 0.23,
-      "spread_vs_us": -1.11
+      "spread_vs_us": -1.17
     },
     {
       "country": "Austria",
       "change": 0.17,
-      "spread_vs_us": -1.37
+      "spread_vs_us": -1.43
     },
     {
       "country": "Netherlands",
       "change": 0.17,
-      "spread_vs_us": -1.59
+      "spread_vs_us": -1.65
     },
     {
       "country": "Ireland",
       "change": 0.16,
-      "spread_vs_us": -1.41
+      "spread_vs_us": -1.47
     },
     {
       "country": "Denmark",
       "change": 0.16,
-      "spread_vs_us": -1.82
+      "spread_vs_us": -1.88
     }
   ],
   "alerts": [
@@ -75,7 +75,7 @@
       "title": "Wide positive spread",
       "message": "South Africa is trading far above the US benchmark.",
       "country": "South Africa",
-      "value": 4.31,
+      "value": 4.25,
       "unit": " pp",
       "level": "stress"
     },
@@ -83,7 +83,7 @@
       "title": "Deep negative spread",
       "message": "Switzerland is trading well below the US benchmark.",
       "country": "Switzerland",
-      "value": -4.16,
+      "value": -4.22,
       "unit": " pp",
       "level": "elevated"
     }
