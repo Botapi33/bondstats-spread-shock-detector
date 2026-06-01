@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-01T10:30:46+00:00",
-  "source_updated_at": "2026-05-31",
-  "shock_score": 10.77,
+  "updated_at": "2026-06-01T16:45:24+00:00",
+  "source_updated_at": "2026-06-01",
+  "shock_score": 19.72,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
@@ -11,14 +11,14 @@
       "spread_vs_us": 0.27
     },
     {
-      "country": "Italy",
-      "change": 0.34,
-      "spread_vs_us": -0.72
+      "country": "Netherlands",
+      "change": 0.17,
+      "spread_vs_us": -1.43
     },
     {
-      "country": "Ireland",
-      "change": 0.16,
-      "spread_vs_us": -1.25
+      "country": "South Africa",
+      "change": -0.13,
+      "spread_vs_us": 4.47
     },
     {
       "country": "United Kingdom",
@@ -31,14 +31,14 @@
       "spread_vs_us": 1.01
     },
     {
-      "country": "Belgium",
-      "change": 0.08,
-      "spread_vs_us": -0.86
+      "country": "Germany",
+      "change": 0.09,
+      "spread_vs_us": -1.45
     },
     {
-      "country": "France",
-      "change": 0.07,
-      "spread_vs_us": -0.78
+      "country": "Portugal",
+      "change": 0.06,
+      "spread_vs_us": -1.02
     },
     {
       "country": "Finland",
@@ -56,12 +56,20 @@
       "level": "stress"
     },
     {
-      "title": "Large country move",
-      "message": "Italy is showing an unusually large recent yield move.",
-      "country": "Italy",
-      "value": 0.34,
+      "title": "Wide positive spread",
+      "message": "South Africa is trading far above the US benchmark.",
+      "country": "South Africa",
+      "value": 4.47,
       "unit": " pp",
       "level": "stress"
+    },
+    {
+      "title": "Deep negative spread",
+      "message": "Switzerland is trading well below the US benchmark.",
+      "country": "Switzerland",
+      "value": -4.0,
+      "unit": " pp",
+      "level": "elevated"
     }
   ]
 }
