@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-02T06:54:10+00:00",
-  "source_updated_at": "2026-06-01",
-  "shock_score": 19.72,
+  "updated_at": "2026-06-02T11:40:36+00:00",
+  "source_updated_at": "2026-06-02",
+  "shock_score": 17.67,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
@@ -11,9 +11,29 @@
       "spread_vs_us": 0.27
     },
     {
+      "country": "Slovakia",
+      "change": 0.23,
+      "spread_vs_us": -0.95
+    },
+    {
+      "country": "Austria",
+      "change": 0.17,
+      "spread_vs_us": -1.21
+    },
+    {
       "country": "Netherlands",
       "change": 0.17,
       "spread_vs_us": -1.43
+    },
+    {
+      "country": "Denmark",
+      "change": 0.16,
+      "spread_vs_us": -1.66
+    },
+    {
+      "country": "Slovenia",
+      "change": 0.16,
+      "spread_vs_us": -1.2
     },
     {
       "country": "South Africa",
@@ -24,26 +44,6 @@
       "country": "United Kingdom",
       "change": 0.12,
       "spread_vs_us": 0.37
-    },
-    {
-      "country": "Chile",
-      "change": -0.09,
-      "spread_vs_us": 1.01
-    },
-    {
-      "country": "Germany",
-      "change": 0.09,
-      "spread_vs_us": -1.45
-    },
-    {
-      "country": "Portugal",
-      "change": 0.06,
-      "spread_vs_us": -1.02
-    },
-    {
-      "country": "Finland",
-      "change": 0.06,
-      "spread_vs_us": -1.07
     }
   ],
   "alerts": [
