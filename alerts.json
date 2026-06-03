@@ -1,65 +1,65 @@
 {
-  "updated_at": "2026-06-03T07:04:58+00:00",
-  "source_updated_at": "2026-06-02",
-  "shock_score": 17.67,
+  "updated_at": "2026-06-03T12:06:26+00:00",
+  "source_updated_at": "2026-06-03",
+  "shock_score": 19.72,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
     {
-      "country": "Czech Republic",
-      "change": 0.35,
-      "spread_vs_us": 0.27
+      "country": "Italy",
+      "change": 0.34,
+      "spread_vs_us": -0.74
     },
     {
-      "country": "Slovakia",
-      "change": 0.23,
-      "spread_vs_us": -0.95
-    },
-    {
-      "country": "Austria",
-      "change": 0.17,
-      "spread_vs_us": -1.21
-    },
-    {
-      "country": "Netherlands",
-      "change": 0.17,
-      "spread_vs_us": -1.43
-    },
-    {
-      "country": "Denmark",
+      "country": "Ireland",
       "change": 0.16,
-      "spread_vs_us": -1.66
+      "spread_vs_us": -1.27
     },
     {
       "country": "Slovenia",
       "change": 0.16,
-      "spread_vs_us": -1.2
+      "spread_vs_us": -1.22
     },
     {
-      "country": "South Africa",
-      "change": -0.13,
-      "spread_vs_us": 4.47
+      "country": "Mexico",
+      "change": 0.14,
+      "spread_vs_us": 4.41
     },
     {
       "country": "United Kingdom",
       "change": 0.12,
-      "spread_vs_us": 0.37
+      "spread_vs_us": 0.35
+    },
+    {
+      "country": "France",
+      "change": 0.07,
+      "spread_vs_us": -0.8
+    },
+    {
+      "country": "India",
+      "change": 0.07,
+      "spread_vs_us": 2.37
+    },
+    {
+      "country": "Finland",
+      "change": 0.06,
+      "spread_vs_us": -1.09
     }
   ],
   "alerts": [
     {
       "title": "Large country move",
-      "message": "Czech Republic is showing an unusually large recent yield move.",
-      "country": "Czech Republic",
-      "value": 0.35,
+      "message": "Italy is showing an unusually large recent yield move.",
+      "country": "Italy",
+      "value": 0.34,
       "unit": " pp",
       "level": "stress"
     },
     {
       "title": "Wide positive spread",
-      "message": "South Africa is trading far above the US benchmark.",
-      "country": "South Africa",
-      "value": 4.47,
+      "message": "Mexico is trading far above the US benchmark.",
+      "country": "Mexico",
+      "value": 4.41,
       "unit": " pp",
       "level": "stress"
     },
@@ -67,7 +67,7 @@
       "title": "Deep negative spread",
       "message": "Switzerland is trading well below the US benchmark.",
       "country": "Switzerland",
-      "value": -4.0,
+      "value": -4.02,
       "unit": " pp",
       "level": "elevated"
     }
