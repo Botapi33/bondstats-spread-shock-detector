@@ -1,49 +1,49 @@
 {
-  "updated_at": "2026-06-16T11:32:07+00:00",
-  "source_updated_at": "2026-06-15",
-  "shock_score": 19.17,
+  "updated_at": "2026-06-16T17:18:54+00:00",
+  "source_updated_at": "2026-06-16",
+  "shock_score": 19.16,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
     {
       "country": "Hungary",
-      "change": -0.86,
-      "spread_vs_us": 1.82
+      "change": -0.62,
+      "spread_vs_us": 1.17
     },
     {
-      "country": "Czech Republic",
-      "change": 0.35,
-      "spread_vs_us": 0.27
+      "country": "Mexico",
+      "change": 0.57,
+      "spread_vs_us": 4.97
     },
     {
-      "country": "Italy",
+      "country": "South Korea",
       "change": 0.34,
-      "spread_vs_us": -0.72
+      "spread_vs_us": -0.41
     },
     {
-      "country": "Slovakia",
-      "change": 0.23,
-      "spread_vs_us": -0.95
+      "country": "Poland",
+      "change": 0.16,
+      "spread_vs_us": 1.26
     },
     {
-      "country": "Austria",
-      "change": 0.17,
-      "spread_vs_us": -1.21
+      "country": "Slovenia",
+      "change": 0.15,
+      "spread_vs_us": -1.08
     },
     {
       "country": "Netherlands",
-      "change": 0.17,
-      "spread_vs_us": -1.43
+      "change": 0.12,
+      "spread_vs_us": -1.33
     },
     {
-      "country": "Ireland",
-      "change": 0.16,
-      "spread_vs_us": -1.25
+      "country": "United Kingdom",
+      "change": 0.12,
+      "spread_vs_us": 0.46
     },
     {
       "country": "Denmark",
-      "change": 0.16,
-      "spread_vs_us": -1.66
+      "change": 0.1,
+      "spread_vs_us": -1.59
     }
   ],
   "alerts": [
@@ -51,31 +51,31 @@
       "title": "Large country move",
       "message": "Hungary is showing an unusually large recent yield move.",
       "country": "Hungary",
-      "value": -0.86,
+      "value": -0.62,
       "unit": " pp",
       "level": "shock"
     },
     {
       "title": "Large country move",
-      "message": "Czech Republic is showing an unusually large recent yield move.",
-      "country": "Czech Republic",
-      "value": 0.35,
+      "message": "Mexico is showing an unusually large recent yield move.",
+      "country": "Mexico",
+      "value": 0.57,
       "unit": " pp",
-      "level": "stress"
+      "level": "shock"
     },
     {
       "title": "Large country move",
-      "message": "Italy is showing an unusually large recent yield move.",
-      "country": "Italy",
+      "message": "South Korea is showing an unusually large recent yield move.",
+      "country": "South Korea",
       "value": 0.34,
       "unit": " pp",
       "level": "stress"
     },
     {
       "title": "Wide positive spread",
-      "message": "South Africa is trading far above the US benchmark.",
-      "country": "South Africa",
-      "value": 4.47,
+      "message": "Mexico is trading far above the US benchmark.",
+      "country": "Mexico",
+      "value": 4.97,
       "unit": " pp",
       "level": "stress"
     },
@@ -83,7 +83,7 @@
       "title": "Deep negative spread",
       "message": "Switzerland is trading well below the US benchmark.",
       "country": "Switzerland",
-      "value": -4.0,
+      "value": -4.04,
       "unit": " pp",
       "level": "elevated"
     }
