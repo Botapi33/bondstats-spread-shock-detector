@@ -1,10 +1,15 @@
 {
-  "updated_at": "2026-06-28T08:27:21+00:00",
-  "source_updated_at": "2026-06-27",
-  "shock_score": 17.5,
+  "updated_at": "2026-06-28T11:15:16+00:00",
+  "source_updated_at": "2026-06-28",
+  "shock_score": 19.16,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
+    {
+      "country": "Hungary",
+      "change": -0.62,
+      "spread_vs_us": 1.25
+    },
     {
       "country": "Mexico",
       "change": 0.57,
@@ -14,6 +19,16 @@
       "country": "South Korea",
       "change": 0.34,
       "spread_vs_us": -0.33
+    },
+    {
+      "country": "Poland",
+      "change": 0.16,
+      "spread_vs_us": 1.34
+    },
+    {
+      "country": "Slovenia",
+      "change": 0.15,
+      "spread_vs_us": -1.0
     },
     {
       "country": "Netherlands",
@@ -29,24 +44,17 @@
       "country": "Denmark",
       "change": 0.1,
       "spread_vs_us": -1.51
-    },
-    {
-      "country": "Italy",
-      "change": 0.09,
-      "spread_vs_us": -0.58
-    },
-    {
-      "country": "Israel",
-      "change": -0.08,
-      "spread_vs_us": -0.42
-    },
-    {
-      "country": "France",
-      "change": 0.07,
-      "spread_vs_us": -0.66
     }
   ],
   "alerts": [
+    {
+      "title": "Large country move",
+      "message": "Hungary is showing an unusually large recent yield move.",
+      "country": "Hungary",
+      "value": -0.62,
+      "unit": " pp",
+      "level": "shock"
+    },
     {
       "title": "Large country move",
       "message": "Mexico is showing an unusually large recent yield move.",
