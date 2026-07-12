@@ -1,6 +1,11 @@
 {
   "entries": [
     {
+      "timestamp": "2026-07-12T10:41:34+00:00",
+      "shock_score": 19.11,
+      "level": "normal"
+    },
+    {
       "timestamp": "2026-07-12T09:13:05+00:00",
       "shock_score": 19.11,
       "level": "normal"
@@ -492,11 +497,6 @@
     },
     {
       "timestamp": "2026-07-02T17:00:04+00:00",
-      "shock_score": 19.14,
-      "level": "normal"
-    },
-    {
-      "timestamp": "2026-07-02T14:26:28+00:00",
       "shock_score": 19.14,
       "level": "normal"
     }
