@@ -1,49 +1,49 @@
 {
-  "updated_at": "2026-07-15T06:25:13+00:00",
-  "source_updated_at": "2026-07-14",
-  "shock_score": 19.12,
+  "updated_at": "2026-07-15T09:19:05+00:00",
+  "source_updated_at": "2026-07-15",
+  "shock_score": 19.11,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
     {
       "country": "Hungary",
       "change": -0.62,
-      "spread_vs_us": 1.09
+      "spread_vs_us": 1.03
     },
     {
       "country": "Mexico",
       "change": 0.57,
-      "spread_vs_us": 4.89
+      "spread_vs_us": 4.83
     },
     {
       "country": "South Korea",
       "change": 0.34,
-      "spread_vs_us": -0.48
+      "spread_vs_us": -0.54
     },
     {
       "country": "Poland",
       "change": 0.16,
-      "spread_vs_us": 1.18
+      "spread_vs_us": 1.12
     },
     {
       "country": "Slovenia",
       "change": 0.15,
-      "spread_vs_us": -1.16
+      "spread_vs_us": -1.22
     },
     {
       "country": "Netherlands",
       "change": 0.12,
-      "spread_vs_us": -1.41
+      "spread_vs_us": -1.47
     },
     {
       "country": "United Kingdom",
       "change": 0.12,
-      "spread_vs_us": 0.38
+      "spread_vs_us": 0.32
     },
     {
       "country": "Denmark",
       "change": 0.1,
-      "spread_vs_us": -1.67
+      "spread_vs_us": -1.73
     }
   ],
   "alerts": [
@@ -75,7 +75,7 @@
       "title": "Wide positive spread",
       "message": "Mexico is trading far above the US benchmark.",
       "country": "Mexico",
-      "value": 4.89,
+      "value": 4.83,
       "unit": " pp",
       "level": "stress"
     },
@@ -83,7 +83,7 @@
       "title": "Deep negative spread",
       "message": "Switzerland is trading well below the US benchmark.",
       "country": "Switzerland",
-      "value": -4.12,
+      "value": -4.18,
       "unit": " pp",
       "level": "elevated"
     }
