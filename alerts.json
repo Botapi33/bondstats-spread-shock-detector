@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-05T08:55:43+00:00",
-  "source_updated_at": "2026-10-04",
-  "shock_score": 17.21,
+  "updated_at": "2026-10-05T18:21:52+00:00",
+  "source_updated_at": "2026-10-05",
+  "shock_score": 17.3,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
@@ -19,6 +19,11 @@
       "country": "Mexico",
       "change": 0.14,
       "spread_vs_us": 3.92
+    },
+    {
+      "country": "Euro Area",
+      "change": -0.13,
+      "spread_vs_us": -1.78
     },
     {
       "country": "Canada",
@@ -39,11 +44,6 @@
       "country": "Slovakia",
       "change": 0.12,
       "spread_vs_us": -1.39
-    },
-    {
-      "country": "Sweden (OECD)",
-      "change": 0.12,
-      "spread_vs_us": -2.22
     }
   ],
   "alerts": [
