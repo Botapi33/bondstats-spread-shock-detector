@@ -1,49 +1,49 @@
 {
-  "updated_at": "2026-10-10T12:24:44+00:00",
-  "source_updated_at": "2026-10-09",
-  "shock_score": 17.26,
+  "updated_at": "2026-10-10T17:49:05+00:00",
+  "source_updated_at": "2026-10-10",
+  "shock_score": 17.31,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
     {
       "country": "Slovenia",
       "change": 0.17,
-      "spread_vs_us": -1.74
+      "spread_vs_us": -1.68
     },
     {
       "country": "Hungary",
       "change": 0.16,
-      "spread_vs_us": 0.18
+      "spread_vs_us": 0.24
     },
     {
       "country": "Mexico",
       "change": 0.14,
-      "spread_vs_us": 3.88
+      "spread_vs_us": 3.94
     },
     {
       "country": "Canada",
       "change": 0.13,
-      "spread_vs_us": -1.61
+      "spread_vs_us": -1.54
     },
     {
       "country": "Czech Republic",
       "change": 0.12,
-      "spread_vs_us": -0.37
+      "spread_vs_us": -0.31
     },
     {
       "country": "Belgium",
       "change": 0.12,
-      "spread_vs_us": -1.52
+      "spread_vs_us": -1.46
     },
     {
       "country": "Slovakia",
       "change": 0.12,
-      "spread_vs_us": -1.43
+      "spread_vs_us": -1.37
     },
     {
       "country": "Sweden (OECD)",
       "change": 0.12,
-      "spread_vs_us": -2.26
+      "spread_vs_us": -2.2
     }
   ],
   "alerts": [
@@ -51,7 +51,7 @@
       "title": "Deep negative spread",
       "message": "Switzerland is trading well below the US benchmark.",
       "country": "Switzerland",
-      "value": -4.81,
+      "value": -4.75,
       "unit": " pp",
       "level": "elevated"
     }
