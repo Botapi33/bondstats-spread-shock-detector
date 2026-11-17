@@ -1,73 +1,65 @@
 {
-  "updated_at": "2026-11-17T13:14:04+00:00",
-  "source_updated_at": "2026-11-16",
-  "shock_score": 19.44,
+  "updated_at": "2026-11-17T21:45:24+00:00",
+  "source_updated_at": "2026-11-17",
+  "shock_score": 18.3,
   "level": "normal",
   "description": "Bond markets are moving within a relatively normal cross-country dispersion range.",
   "top_movers": [
     {
-      "country": "Poland",
-      "change": 0.42,
-      "spread_vs_us": 1.13
+      "country": "India",
+      "change": 0.32,
+      "spread_vs_us": 2.23
+    },
+    {
+      "country": "Italy",
+      "change": 0.32,
+      "spread_vs_us": -0.47
+    },
+    {
+      "country": "Belgium",
+      "change": 0.26,
+      "spread_vs_us": -0.77
+    },
+    {
+      "country": "South Korea",
+      "change": -0.24,
+      "spread_vs_us": -0.94
     },
     {
       "country": "Greece",
-      "change": 0.36,
-      "spread_vs_us": -0.87
+      "change": 0.18,
+      "spread_vs_us": -0.74
     },
     {
-      "country": "Chile",
-      "change": 0.33,
-      "spread_vs_us": 0.91
+      "country": "Israel",
+      "change": 0.17,
+      "spread_vs_us": -0.9
     },
     {
-      "country": "Portugal",
-      "change": 0.31,
-      "spread_vs_us": -1.25
+      "country": "Slovakia",
+      "change": 0.15,
+      "spread_vs_us": -0.84
     },
     {
       "country": "Spain",
-      "change": 0.29,
-      "spread_vs_us": -1.18
-    },
-    {
-      "country": "Australia",
-      "change": 0.27,
-      "spread_vs_us": 0.18
-    },
-    {
-      "country": "New Zealand",
-      "change": 0.23,
-      "spread_vs_us": -0.16
-    },
-    {
-      "country": "India",
-      "change": 0.22,
-      "spread_vs_us": 1.96
+      "change": 0.14,
+      "spread_vs_us": -1.08
     }
   ],
   "alerts": [
     {
       "title": "Large country move",
-      "message": "Poland is showing an unusually large recent yield move.",
-      "country": "Poland",
-      "value": 0.42,
+      "message": "India is showing an unusually large recent yield move.",
+      "country": "India",
+      "value": 0.32,
       "unit": " pp",
       "level": "stress"
     },
     {
       "title": "Large country move",
-      "message": "Greece is showing an unusually large recent yield move.",
-      "country": "Greece",
-      "value": 0.36,
-      "unit": " pp",
-      "level": "stress"
-    },
-    {
-      "title": "Large country move",
-      "message": "Chile is showing an unusually large recent yield move.",
-      "country": "Chile",
-      "value": 0.33,
+      "message": "Italy is showing an unusually large recent yield move.",
+      "country": "Italy",
+      "value": 0.32,
       "unit": " pp",
       "level": "stress"
     },
@@ -75,7 +67,7 @@
       "title": "Wide positive spread",
       "message": "Mexico is trading far above the US benchmark.",
       "country": "Mexico",
-      "value": 4.25,
+      "value": 4.1,
       "unit": " pp",
       "level": "stress"
     },
@@ -83,7 +75,7 @@
       "title": "Deep negative spread",
       "message": "Switzerland is trading well below the US benchmark.",
       "country": "Switzerland",
-      "value": -4.51,
+      "value": -4.64,
       "unit": " pp",
       "level": "elevated"
     }
